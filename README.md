@@ -51,12 +51,52 @@ var options = {
 ```
 
 ###Examples
-Printing a live TSLA quote using the default API:
+Printing a live TSLA quote using the Yahoo Finance API:
 ```javascript
 var MarketMuster = require("marketmuster");
 var marketmuster = new MarketMuster();
 
 marketmuster.getQuotes("TSLA", function(quote){
     console.log(quote.TSLA);
+});
+```
+
+Printing live TSLA / AAPL quotes using the Markit On Demand API:
+```javascript
+var MarketMuster = require("marketmuster");
+var marketmuster = new MarketMuster();
+
+marketmuster.config({
+    datasource: "markitondemand"
+});
+
+marketmuster.getQuotes(["TSLA", "AAPL"], function(quote){
+    console.log(quote.TSLA);
+    console.log(quote.AAPL);
+});
+```
+Printing a live TSLA quote using the Yahoo Finance API, returning only the Bid attribute:
+```javascript
+var MarketMuster = require("marketmuster");
+var marketmuster = new MarketMuster();
+
+marketmuster.getQuotes("TSLA", { filter: ["Bid"] }, function(quote){
+    console.log(quote.TSLA);
+});
+```
+
+Printing streaming TSLA / AAPL quotes using the Yahoo Finance API:
+```javascript
+var MarketMuster = require("marketmuster");
+var marketmuster = new MarketMuster();
+
+marketmuster.streamQuotes(["TSLA", "AAPL"], function(stream){
+    stream.on("AAPL", function(quote){
+        console.log(quote);
+    });
+
+    stream.on("TSLA", function(quote){
+        console.log(quote);
+    });
 });
 ```
