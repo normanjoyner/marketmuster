@@ -1,0 +1,32 @@
+{
+  "name": "marketmuster",
+  "version": "0.0.0",
+  "description": "A simple nodejs library to gather stock data.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/normanjoyner/marketmuster.git"
+  },
+  "keywords": [
+    "market",
+    "stock",
+    "api",
+    "stream",
+    "muster",
+    "quote"
+  ],
+  "author": "Norman Joyner",
+  "license": "GPLv2",
+  "bugs": {
+    "url": "https://github.com/normanjoyner/marketmuster/issues"
+  },
+  "homepage": "https://github.com/normanjoyner/marketmuster",
+  "dependencies": {
+    "lodash": "~2.4.1",
+    "async": "~0.6.2",
+    "request": "~2.34.0"
+  }
+}
