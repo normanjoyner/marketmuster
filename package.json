@@ -1,6 +1,6 @@
 {
   "name": "marketmuster",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "A simple nodejs library to gather stock data.",
   "main": "main.js",
   "scripts": {
